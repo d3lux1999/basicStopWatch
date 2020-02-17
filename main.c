@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
+#include <unistd.h>
 
 #define TRUE 1
 
@@ -8,9 +8,9 @@ int main(void)
 {
     int hour = 0, min = 0, sec = 0;
     while(TRUE){
-        printf("\r \t%2d : %2d : %2d", hour, min, sec);
+        printf("\r \t%2d : %2d : %2d\n", hour, min, sec);
         sec++;
-        Sleep(1000);
+        sleep(1);
         if(sec == 59){
             min++;
             sec = 0;
